@@ -1,0 +1,16 @@
+body {
+  background: aqua; }
+
+p::before {
+  content: 'Hello World';
+  background: red;
+  font-size: 15px;
+  display: block; }
+
+p::after {
+  content: 'Goodbye World';
+  background: red;
+  font-size: 15px;
+  display: block; }
+
+/*# sourceMappingURL=style.css.map */

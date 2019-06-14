@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Unica+One|Vollkorn');
+
+$ff-ss: 'Unica One';
+$ff-s: 'Vollkorn';
+
+$clr-red: #c31;
+$clr-black: rgba(black, 1);
+$clr-gray: rgba(black, .7);
+body{
+    font-size:1rem;
+    text-align:center;
+    font-family:$ff-s;
+    line-height:1.4;
+    color:$clr-gray; 
+}
+h1,h2,h3,h4,h5{
+    font-family:$ff-ss;
+    text-transform:uppercase;
+    line-height:.9;
+    color:#c31;
+}
+.intro{
+    position: relative;
+    display:inline-block;
+    &::before,
+    &::after{
+        content:'';
+        height:100%;
+        display:block;
+        position:absolute;
+        top: 0;
+
+    }
+    &::before{
+        background:white;
+       
+        z-index:-1;
+        height:101%;
+        left:-20px;
+        right:-20px;
+
+    }
+    &::after{
+        background:$clr-red;
+        width:100vw;
+        left:50%;
+        transform:translateX(-50%);
+        z-index:-2;
+        height:100%;
+    }
+}
+.container{
+    width:80%;
+    margin:0 auto;
+    display:flex;
+    justify-content:center;
+}
+.card{
+    position: relative;
+    margin: 1rem;
+    background: $clr-gray;
+
+    &::before,
+    &::after{
+        content:'';
+        position: absolute;
+        top:1.25em;
+        bottom:1.25em;
+        left:1.25em;
+        right:1.25em;
+        
+    }
+    &::before{
+    //    background:pink;
+       transform:scale(0,1);
+       transition:transform ease-out 250ms;
+       border-top:1px solid white;
+       border-bottom:1px solid white;
+    }
+    &::after{
+        transform:scale(1,0);
+       transition:transform ease-out 250ms;
+       border-left:1px solid white;
+       border-right:1px solid white;
+    }
+    &:hover::before{
+     transform:scale(1.05,1);
+    }
+    &:hover::after{
+        transform:scale(1,1.05);
+       }
+}
+.card__img{
+max-width:100%;
+display:block;
+transition:opacity ease-out 250ms;
+opacity:1;
+}
+.card:hover,.card__img{
+    opacity:0.4;
+}
+.card__text{
+    position: absolute;
+    top:50%;
+}
+h2{
+    margin-top:1.2em;}

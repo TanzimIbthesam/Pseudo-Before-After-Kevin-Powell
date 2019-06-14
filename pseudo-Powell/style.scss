@@ -1,0 +1,16 @@
+$color:aqua;
+body{
+    background:$color;
+}
+p::before{
+    content:'Hello World';
+    background:red;
+    font-size:15px;
+    display: block;
+}
+p::after{
+    content:'Goodbye World';
+    background:red;
+    font-size:15px;
+    display: block;
+}
